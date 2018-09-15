@@ -4,6 +4,8 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"net/url"
+	"strconv"
 	"strings"
 )
 
@@ -20,7 +22,7 @@ func HTTPHandlerFactory() *HTTPHandlerUtil {
 func (handler *HTTPHandlerUtil) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	log.Println(r.URL.Path)
 	if r.Method == "GET" {
-		/*	if r.URL.Path == "/Demands" {
+		if r.URL.Path == "/Demands" {
 			m, err := url.ParseQuery(r.URL.RawQuery)
 			if err != nil {
 				log.Println("Failed to parse url: ", m["h"][0])
@@ -34,10 +36,10 @@ func (handler *HTTPHandlerUtil) ServeHTTP(w http.ResponseWriter, r *http.Request
 				w.Header().Set("Content-Type", "application/json")
 				w.Header().Set("Access-Control-Allow-Origin", "*")
 				w.Header().Set("Access-Control-Allow-Credentials", "true")
-				handler.adapter.HandleDemandsRequest(w, fragment)
+				handler.HandleDemandsRequest(w, fragment)
 			}
 			return
-		}*/
+		}
 	}
 	path := r.URL.Path
 	if path == "/" {
