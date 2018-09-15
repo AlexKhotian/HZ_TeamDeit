@@ -9,6 +9,7 @@ import (
 )
 
 type IngData struct {
+	id  int
 	Ing string
 	GU  uint32
 	EC  uint32
@@ -29,20 +30,24 @@ func (accessor *DatabaseAccessor) OpenDB(databasePath string) {
 }
 
 func (accessor *DatabaseAccessor) CreateDatabasePolution() bool {
-	statement, err := accessor.databasePolution.Prepare(`CREATE TABLE IF NOT EXISTS FoodPolution
-		(id INTEGER PRIMARY KEY, ing TEXT, gw INTEGER, ec INTEGER, wu INTEGER)`)
+	statement, err := accessor.databasePolution.Prepare(`CREATE TABLE IF NOT EXISTS FoodPolutionTable
+		(id INTEGER AUTO_INCREMENT, ing TEXT, gw REAL, ec REAL, wu REAL, PRIMARY KEY (id))`)
 	if err != nil {
 		fmt.Println("Error occured while creating database ", err)
 		return false
 	}
-	statement.Exec()
+	_, err = statement.Exec()
+	if err != nil {
+		fmt.Println("Error occured while exec creation of database ", err)
+		return false
+	}
 
 	return true
 }
 
 func (accessor *DatabaseAccessor) AddRowToIngs(data IngData) bool {
-	statement, err := accessor.databasePolution.Prepare(`INSERT INTO FoodPolution
-        (ing, gw, ec, we) VALUES (?, ?, ?, ?)`)
+	statement, err := accessor.databasePolution.Prepare(`INSERT INTO FoodPolutionTable
+        (id, ing, gw, ec, we) VALUES (NULL, ?, ?, ?, ?)`)
 	if err != nil {
 		fmt.Println("Error AddRowToIngs prep" + err.Error())
 		return false
@@ -56,7 +61,7 @@ func (accessor *DatabaseAccessor) AddRowToIngs(data IngData) bool {
 }
 
 func (accessor *DatabaseAccessor) GetRowFromIngs(ing string) *IngData {
-	statement, err := accessor.databasePolution.Prepare(`SELECT * FROM FoodPolution
+	statement, err := accessor.databasePolution.Prepare(`SELECT * FROM FoodPolutionTable
         WHERE ing = ?`)
 	if err != nil {
 		fmt.Println("Error GetRowFromIngs prep" + err.Error())

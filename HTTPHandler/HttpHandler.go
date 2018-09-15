@@ -17,7 +17,9 @@ type HTTPHandlerUtil struct {
 // HTTPHandlerFactory creates a interface for HTTPHandlerUtil
 func HTTPHandlerFactory() *HTTPHandlerUtil {
 	thisHandler := new(HTTPHandlerUtil)
-	thisHandler.populationhandler = PolutionHandlerFactory()
+	//thisHandler.populationhandler = PolutionHandlerFactory()
+	//a, b, c := thisHandler.populationhandler.HandlerPolution("beef")
+	//fmt.Println(a, b, c)
 	return thisHandler
 }
 
