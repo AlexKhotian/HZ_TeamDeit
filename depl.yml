@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: hzproj
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: hzproj
+    template:
+        metadata:
+            labels:
+                app: hzproj
+        spec:
+            containers:
+                - name: hzproj
+                  image: 02221992/hz_deit:0.6
+                  ports:
+                      - containerPort: 7777
+                        name: http-port
+                  imagePullPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: hzproj
+spec:
+    type: NodePort
+    ports:
+    - port: 7777
+      nodePort: 32123
+    selector:
+        app: hzproj
