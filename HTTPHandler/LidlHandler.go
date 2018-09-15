@@ -9,7 +9,7 @@ type LidlHandler struct {
 func LidlHandlerFactory() *LidlHandler {
 	thisHandler := new(LidlHandler)
 	thisHandler.dbAcc = new(Database.DatabaseAccessorLidl)
-	thisHandler.dbAcc.OpenDB("admin:PUFYLPVWKIMWOLCB@/foodpolution")
+	thisHandler.dbAcc.OpenDB("admin:PUFYLPVWKIMWOLCB@tcp(sl-eu-de-1-portal.7.dblayer.com:16663)/foodpolution")
 	thisHandler.dbAcc.CreateDatabaseLidl()
 	return thisHandler
 }

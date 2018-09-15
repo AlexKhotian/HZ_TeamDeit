@@ -33,7 +33,11 @@ func (handler *HTTPHandlerUtil) ServeHTTP(w http.ResponseWriter, r *http.Request
 				w.Header().Set("Content-Type", "application/json")
 				w.Header().Set("Access-Control-Allow-Origin", "*")
 				w.Header().Set("Access-Control-Allow-Credentials", "true")
-				handler.populationhandler.ProcessRequest(w, m["h"][0])
+				if _, ok := m["lat"]; ok {
+					handler.populationhandler.ProcessRequest(w, m["h"][0], m["lat"][0], m["lon"][0])
+				} else {
+					handler.populationhandler.ProcessRequest(w, m["h"][0], "47.3872661", "8.5079584,13")
+				}
 			}
 			return
 		}
