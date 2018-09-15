@@ -11,11 +11,13 @@ import (
 
 // HTTPHandlerUtil implement interface
 type HTTPHandlerUtil struct {
+	populationhandler *PolutionHandler
 }
 
 // HTTPHandlerFactory creates a interface for HTTPHandlerUtil
 func HTTPHandlerFactory() *HTTPHandlerUtil {
 	thisHandler := new(HTTPHandlerUtil)
+	thisHandler.populationhandler = PolutionHandlerFactory()
 	return thisHandler
 }
 
