@@ -1,47 +1,70 @@
 <div class="page" data-name="result">
-  <div class="navbar">
-      <div class="navbar-inner">
-          <div class="title">Title</div>
-      </div>
-  </div>
-  <div class="row">
-    <div class="col-h25">
+    <script type="text" id="tabletemplate">
+        <tr>
+            <td class="label-cell">{{InitialIng}}</td>
+            <td class="numeric-cell">{{GlobalWarming}}</td>
+            <td class="numeric-cell">{{EnergyConsumption}}</td>
+            <td class="numeric-cell">{{WaterUsage}}</td>
+        </tr>
+    </script>
+
+    <script type="text" id="tabletemplate2">
+        <tr>
+            <td class="label-cell">{{ReplaceIng}}</td>
+            <td class="numeric-cell">{{FullPice}}</td>
+            <td class="numeric-cell">{{Discount}}</td>
+        </tr>
+    </script>
+
+
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="title">Title</div>
+        </div>
     </div>
-  </div>
-  <div class="block-title">Basic informations</div>
+    <div class="row">
+        <div class="col-h25">
+        </div>
+    </div>
+    <div class="block-title">Basic informations</div>
 
+    <div class="data-table" name="restable">
+        <table class="data-table-real" name="result-table">
+            <thead>
+                <tr>
+                    <th class="label-cell"><b>Food</b></th>
+                    <th class="numeric-cell">GWP</th>
+                    <th class="numeric-cell">Energy Consumption</th>
+                    <th class="numeric-cell">Water Usage</th>
+                </tr>
+            </thead>
+            <tbody id="resulttable">
+            </tbody>
+        </table>
+        <table class="data-table-real2" name="result-table2">
+            <thead>
+                <tr>
+                    <th class="label-cell"><b>Replacement</b></th>
+                    <th class="numeric-cell">Price</th>
+                    <th class="numeric-cell">Discount</th>
+                </tr>
+            </thead>
+            <tbody id="resulttable2">
+            </tbody>
+        </table>
+    </div>
 
-  <div class="data-table">
-  <table>
-    <thead>
-      <tr>
-        <th class="label-cell"><b>Food</b></th>
-        <th class="numeric-cell">GWP</th>
-        <th class="numeric-cell">Energy Consumption</th>
-        <th class="numeric-cell">Water Usage</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="label-cell">Beef</td>
-        <td class="numeric-cell">27.76</td>
-        <td class="numeric-cell">164.22</td>
-        <td class="numeric-cell">0.47</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-  <!-- Cordova -->
-  <!--
+    <!-- Cordova -->
+    <!--
   <script src="cordova.js"></script>
   -->
 
-  <!-- Framework7 library -->
-  <script src="framework7/js/framework7.min.js"></script>
+    <!-- Framework7 library -->
+    <script src="framework7/js/framework7.min.js"></script>
 
-  <!-- App routes -->
-  <script src="js/routes.js"></script>
+    <!-- App routes -->
+    <script src="js/routes.js"></script>
 
-  <!-- Your custom app scripts -->
-  <script src="js/app.js"></script>
+    <!-- Your custom app scripts -->
+    <script src="js/app.js"></script>
 </div>

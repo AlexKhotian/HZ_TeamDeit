@@ -1,7 +1,7 @@
 // Dom7
 var $$ = Dom7;
 
-var poebota = [];
+var poebota;
 // Framework7 App main instance
 var app = new Framework7({
     root: '#app', // App root element
@@ -16,6 +16,23 @@ var app = new Framework7({
                 lastName: 'Doe',
             },
         };
+    },
+    on: {
+        pageInit: function(page) {
+            if (page.name === "result") {
+                const template = page.$el.children("#tabletemplate").html();
+                const compiled = Template7.compile(template);
+                const content = compiled(poebota);
+                console.log(content)
+                page.$el.find("#resulttable").html(content);
+
+                const template2 = page.$el.children("#tabletemplate2").html();
+                const compiled2 = Template7.compile(template2);
+                const content2 = compiled2(poebota);
+                console.log(content2)
+                page.$el.find("#resulttable2").html(content2);
+            }
+        }
     },
     // App root methods
     methods: {
@@ -43,5 +60,8 @@ app.on('test3', function() {
     var formData = app.form.convertToData('#thirdScreen');
     app.request.get('http://127.0.0.1:7777/Ings?h=' + formData.usuallyEat, function(data) {
         console.log(data);
+        poebota = JSON.parse(data);
+
+        app.views.main.router.navigate("/result/")
     });
-});
+})
