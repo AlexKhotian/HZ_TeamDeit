@@ -5,7 +5,6 @@ import (
 	"log"
 	"net/http"
 	"net/url"
-	"strconv"
 	"strings"
 )
 
@@ -17,9 +16,7 @@ type HTTPHandlerUtil struct {
 // HTTPHandlerFactory creates a interface for HTTPHandlerUtil
 func HTTPHandlerFactory() *HTTPHandlerUtil {
 	thisHandler := new(HTTPHandlerUtil)
-	//thisHandler.populationhandler = PolutionHandlerFactory()
-	//a, b, c := thisHandler.populationhandler.HandlerPolution("beef")
-	//fmt.Println(a, b, c)
+	thisHandler.populationhandler = PolutionHandlerFactory()
 	return thisHandler
 }
 
@@ -33,14 +30,14 @@ func (handler *HTTPHandlerUtil) ServeHTTP(w http.ResponseWriter, r *http.Request
 				return
 			} else {
 				log.Println("Requested day type: ", m["h"][0])
-				_, err := strconv.Atoi(m["h"][0])
-				if err != nil {
-					log.Println("Failed to convert fragment")
-				}
 				w.Header().Set("Content-Type", "application/json")
 				w.Header().Set("Access-Control-Allow-Origin", "*")
 				w.Header().Set("Access-Control-Allow-Credentials", "true")
-				//handler.HandleDemandsRequest(w, fragment)
+				if _, ok := m["lat"]; ok {
+					handler.populationhandler.ProcessRequest(w, m["h"][0], m["lat"][0], m["lon"][0])
+				} else {
+					handler.populationhandler.ProcessRequest(w, m["h"][0], "47.3872661", "8.5079584,13")
+				}
 			}
 			return
 		}

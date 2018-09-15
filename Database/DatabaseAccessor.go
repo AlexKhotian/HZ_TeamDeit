@@ -4,16 +4,15 @@ import (
 	"database/sql"
 	"fmt"
 
-	//_ "github.com/mattn/go-sqlite3"
 	_ "github.com/go-sql-driver/mysql"
 )
 
 type IngData struct {
 	id  int
 	Ing string
-	GU  uint32
-	EC  uint32
-	WU  uint32
+	GU  float32
+	EC  float32
+	WU  float32
 }
 
 type DatabaseAccessor struct {
@@ -47,7 +46,7 @@ func (accessor *DatabaseAccessor) CreateDatabasePolution() bool {
 
 func (accessor *DatabaseAccessor) AddRowToIngs(data IngData) bool {
 	statement, err := accessor.databasePolution.Prepare(`INSERT INTO FoodPolutionTable
-        (id, ing, gw, ec, we) VALUES (NULL, ?, ?, ?, ?)`)
+        (id, ing, gw, ec, wu) VALUES (NULL, ?, ?, ?, ?)`)
 	if err != nil {
 		fmt.Println("Error AddRowToIngs prep" + err.Error())
 		return false
@@ -70,7 +69,7 @@ func (accessor *DatabaseAccessor) GetRowFromIngs(ing string) *IngData {
 	defer statement.Close()
 
 	data := new(IngData)
-	err = statement.QueryRow(ing).Scan(&data)
+	err = statement.QueryRow(ing).Scan(&data.id, &data.Ing, &data.GU, &data.EC, &data.WU)
 	if err != nil {
 		fmt.Println("Error GetRowFromIngs exec" + err.Error())
 		return nil
