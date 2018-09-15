@@ -1,4 +1,4 @@
-<div class="page" data-name="mealtime" id="mealtime_test">
+<div class="page" data-name="mealtime" class="mealtime ml_test">
 
     <div class="navbar">
         <div class="navbar-inner">
@@ -10,39 +10,46 @@
         </div>
     </div>
     <div class="block-title">Meal Time (Breakfast)</div>
-    <div class="list inset" id="trash">
-        <ul>
-            <li class="item-content item-input">
-                <div class="item-inner">
-                    <div class="item-input-wrap">
-                        <input type="text" placeholder="What do you usually eat?">
-                        <span class="input-clear-button"></span>
+    <div class="list inset" class="t test2" id="trash">
+        <form id="thirdScreen">
+            <ul>
+                <li class="item-content item-input">
+                    <div class="item-inner">
+                        <div class="item-input-wrap">
+                            <input type="text" name="usuallyEat" placeholder="What do you usually eat?" />
+                            <span class="input-clear-button"></span>
+                        </div>
                     </div>
-                </div>
-            </li>
-        </ul>
-        <ul>
-            <li class="item-content item-input">
-                <div class="item-inner">
-                    <div class="item-input-wrap">
-                        <input type="text" placeholder="how many Kilograms?">
-                        <span class="input-clear-button"></span>
+                </li>
+            </ul>
+            <ul>
+                <li class="item-content item-input">
+                    <div class="item-inner">
+                        <div class="item-input-wrap">
+                            <input type="text" name="kg" class="poebotainput" placeholder="how many Kilograms?">
+                            <span class="input-clear-button"></span>
+                        </div>
                     </div>
-                </div>
-            </li>
-        </ul>
-        <div class="row">
+                </li>
+            </ul>
+        </form>
+        <div class="row test3">
 
-            <div class="col-50"><a href="/result/" class="submit_ing_btn" id="submit_ing_btn">Submit</a></div>
-            <div class="col-50"><a class="submit_ing_btn2" id="submit_ing_btn2">Submit2</a></div>
+            <div class="col-50"><a href="/result/" class="button submit_ing_btn" id="submit_ing_btn">Submit</a></div>
+            <div class="col-50"><a class="button submit_ing_btn2" id="submit_ing_btn2" onclick="app.emit('test3')">Submit2</a></div>
         </div>
     </div>
+
+    <script type="text/javascript">
+        function onCommitRecepie() {
+            LoadRecipe();
+        }
+    </script>
     <!-- Cordova -->
     <!--
   <script src="cordova.js"></script>
   -->
-
-    <script type="text/javascript" src="js/connector.js"></script>
+    <script src="js/connector.js"></script>
     <!-- Framework7 library -->
     <script src="framework7/js/framework7.min.js"></script>
 
