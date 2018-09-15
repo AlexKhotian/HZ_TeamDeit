@@ -1,0 +1,44 @@
+html{
+  font-family: "PT Sans", sans-serif;
+  font-size: 20px;
+  background: url('/Images/StartPageBckg.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.sidebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 18rem;
+  text-align: left;
+  background: #4fb594;
+  padding: 2rem, 1rem;
+}
+
+.container{
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+
+.sidebar a{
+  color: #fff;
+}
+
+.sidebar-nav-item{
+  display: block;
+  line-height: 1.75;
+}
+
+.content{
+  max-width: 38rem;
+  margin-left: 22rem;
+  margin-right: 4rem;
+}
+
+a{
+  text-decoration: none;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ShuffleEat</title>
+    <link type="text/css" rel="stylesheet" href="StartPage.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+
+<body class="SP_body">
+    <div class="sidebar">
+        <div class="container">
+            <div class="logo">
+                <a href="/">
+
+                </a>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="sidebar-nav-item">
+                    <p onclick="ChooseIngredient()">Search for ingredients</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <div class="content" id="content">
+        Make Food Greate Again!
+    </div>
+    <script type="text/javascript">
+        function LoadSubPage(url) {
+            $("#content").load(url);
+        }
+
+        function ChooseIngredient() {
+            //  $("#content").load("ChooseIngredient.html");
+        }
+    </script>
+</body>
+
+</html>
