@@ -1,8 +1,8 @@
 package HTTPHandler
 
 import (
-	"HZ_proj/Database"
-	"HZ_proj/Suggestions"
+	"HZ_proj/Backend/Database"
+	"HZ_proj/Backend/Suggestions"
 	"encoding/json"
 	"fmt"
 	"log"

@@ -1,6 +1,6 @@
 package main
 
-import "HZ_proj/HTTPHandler"
+import "HZ_proj/Backend/HTTPHandler"
 
 func main() {
 	server := HTTPHandler.ServerRoutineFactory()

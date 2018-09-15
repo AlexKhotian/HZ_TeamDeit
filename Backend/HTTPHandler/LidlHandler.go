@@ -1,6 +1,6 @@
 package HTTPHandler
 
-import "HZ_proj/Database"
+import "HZ_proj/Backend/Database"
 
 type LidlHandler struct {
 	dbAcc *Database.DatabaseAccessorLidl
