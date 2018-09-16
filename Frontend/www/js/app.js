@@ -68,7 +68,7 @@ app.on('test3', function() {
        var secondScreenFormData = app.form.convertToData('#secondScreen');
        console.log("secondScreenFormData", secondScreenFormData)*/
     var formData = app.form.convertToData('#thirdScreen');
-    app.request.get('http://127.0.0.1:7777/Ings?h=' + formData.usuallyEat, function(data) {
+    app.request.get('http://159.122.187.245:32123/Ings?h=' + formData.usuallyEat, function(data) {
         console.log(data);
         poebota = JSON.parse(data);
 
