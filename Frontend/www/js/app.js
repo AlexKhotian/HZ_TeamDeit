@@ -31,6 +31,12 @@ var app = new Framework7({
                 const content2 = compiled2(poebota);
                 console.log(content2)
                 page.$el.find("#resulttable2").html(content2);
+
+                const template3 = page.$el.children("#tabletemplate3").html();
+                const compiled3 = Template7.compile(template3);
+                const content3 = compiled3(poebota);
+                console.log(content3)
+                page.$el.find("#resulttable3").html(content3);
             }
         }
     },
