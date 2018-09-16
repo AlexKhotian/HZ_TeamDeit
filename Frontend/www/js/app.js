@@ -49,6 +49,10 @@ var mainView = app.views.create('.view-main', {
     url: '/'
 });
 
+app.on('test4', function() {
+    window.open(poebota.LinkWithShops);
+})
+
 app.on('test3', function() {
     // document.querySelector("")
 
