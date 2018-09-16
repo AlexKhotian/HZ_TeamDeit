@@ -1,4 +1,15 @@
 <div class="page" data-name="result">
+    <div class="page-content">
+<div class="navbar">
+    <div class="navbar-inner">
+      <div class="left">
+<img src="./img/logo.png" style="padding-left: 10px;" height="28px" width="28px">
+</div>
+        <div class="title">AltFo</div>
+    </div>
+</div>
+
+
     <script type="text" id="tabletemplate">
         <tr>
             <td class="label-cell">{{InitialIng}}</td>
@@ -22,15 +33,7 @@
         </tr>
     </script>
 
-    <div class="navbar">
-        <div class="navbar-inner">
-            <div class="title">Title</div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-h25">
-        </div>
-    </div>
+
     <div class="block-title">Basic informations</div>
     <p class="block-title">What if you try:</p>
     <div class="data-table" name="restable">
@@ -38,8 +41,8 @@
             <thead>
                 <tr>
                     <th class="label-cell"><b>Replacement</b></th>
-                    <th class="numeric-cell">Price</th>
-                    <th class="numeric-cell">Discount</th>
+                    <th class="numeric-cell">Price (€)</th>
+                    <th class="numeric-cell">Discount (%)</th>
                 </tr>
             </thead>
             <tbody id="resulttable2">
@@ -51,8 +54,8 @@
                 <tr>
                     <th class="label-cell"><b>Food</b></th>
                     <th class="numeric-cell">GWP</th>
-                    <th class="numeric-cell">Energy Consumption</th>
-                    <th class="numeric-cell">Water Usage</th>
+                    <th class="numeric-cell">Energy Cons.</th>
+                    <th class="numeric-cell">Water Us.</th>
                 </tr>
             </thead>
             <tbody id="resulttable">
@@ -61,14 +64,13 @@
         <table class="data-table-real" name="result-table">
             <thead>
                 <tr>
-                    <th class="numeric-cell"><b>Available now with a discount</b></th>
+                    <th class="numeric-cell">🔔 <b>Available now with a discount</b></th>
                 </tr>
             </thead>
             <tbody id="resulttable3">
             </tbody>
         </table>
     </div>
-    <div class="page-content">
         <div class="row">
             <div class="col-5"></div>
             <div class="col-35">

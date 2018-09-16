@@ -10,10 +10,18 @@
 }
 */
 
-
+.demo-card-header-pic .card-header {
+  height: 35vw;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+.demo-card-header-pic .card-content-padding .date{
+  color: #8e8e93;
+}
 .col-h25 {
   width: 100%;
-  height: 80px;
+  height: 65px;
   width: calc((100% - 16px*0.25) / 1.25);
 }
 
