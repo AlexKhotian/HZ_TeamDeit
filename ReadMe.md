@@ -1,4 +1,4 @@
-# AltFo
+# HZDeit
 
 A progressive platform for rising an awerness about food consumption cost.
 Provided as Platform-as-a-Service.
