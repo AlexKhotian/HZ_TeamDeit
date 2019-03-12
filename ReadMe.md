@@ -12,7 +12,7 @@ where TAG - is name for your container
     V - version
 
 Solution is cloud-native.
-It contain kubernetes config files.
+It contains kubernetes config files.
 You can easely deploy it in your cloud.
 
 $: kubectl apply -f "/path/to/config.yml"
